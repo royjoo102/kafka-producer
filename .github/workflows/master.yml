@@ -41,7 +41,4 @@ jobs:
       run: aws s3 cp --region ap-northeast-2 ./kafka-producer.tar.gz s3://datalake-actions-deploy-rj/kafka-producer/kafka-producer.tar.gz
 
     - name: deploy with AWS codeDeploy
-      run: aws deploy create-deployment
-        --application-name datalake-deploy
-        --deployment-group-name kafka-deploy
-        --s3-location bucket=datalake-actions-deploy-rj,bundleType=tgz,key=kafka-producer/kafka-producer.tar.gz
+      run: aws deploy create-deployment --application-name datalake-deploy --deployment-group-name kafka-deploy --s3-location bucket=datalake-actions-deploy-rj,bundleType=tgz,key=kafka-producer/kafka-producer.tar.gz
