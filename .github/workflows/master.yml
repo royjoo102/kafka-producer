@@ -1,7 +1,9 @@
 name: deploy to kafka broker
-on:
+
+"on":
   push:
-    branches: [ master ]
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
